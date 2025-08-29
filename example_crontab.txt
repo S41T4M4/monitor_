@@ -1,0 +1,41 @@
+# Configuração crontab para automações JCDECOR - PRODUÇÃO
+# Este arquivo é usado no ambiente Linux real
+
+# ------------------------------
+# Crontab criado para automações JCDECOR
+# ------------------------------
+
+# C1, CAT1, NC1, PG1, PR2 - rodando uma vez por dia às 8h
+0 8 * * * /home/jc-automation/Downloads/REALTIME/C1/run_C1.sh
+0 8 * * * /home/jc-automation/Downloads/REALTIME/CAT1/run_CAT1.sh
+0 8 * * * /home/jc-automation/Downloads/REALTIME/NC1/run_NC1.sh
+0 8 * * * /home/jc-automation/Downloads/REALTIME/PG1/run_PG1.sh
+0 8 * * * /home/jc-automation/Downloads/REALTIME/PR2/run_PR2.sh
+
+# V1 - rodando uma vez por dia às 9h
+0 9 * * * /home/jc-automation/Downloads/REALTIME/V1/run_V1.sh
+
+# CR1, NF1, NF2, P1, P2 - rodando de hora em hora das 8h às 17h
+0 8-17 * * * /home/jc-automation/Downloads/REALTIME/CR1/run_CR1.sh
+0 8-17 * * * /home/jc-automation/Downloads/REALTIME/NF1/run_NF1.sh
+0 8-17 * * * /home/jc-automation/Downloads/REALTIME/NF2/run_NF2.sh
+0 8-17 * * * /home/jc-automation/Downloads/REALTIME/P1/run_P1.sh
+0 8-17 * * * /home/jc-automation/Downloads/REALTIME/P2/run_P2.sh
+
+# EM1 - rodando de 1h30 em 1h30
+0 8,11,14,17 * * * /home/jc-automation/Downloads/REALTIME/EM1/run_EM1.sh
+30 9,12,15 * * * /home/jc-automation/Downloads/REALTIME/EM1/run_EM1.sh
+
+# ODC1, ODC2, ORC1, PR1 - rodando de 2 em 2 horas das 8h às 16h
+0 8,10,12,14,16 * * * /home/jc-automation/Downloads/REALTIME/ODC1/run_ODC1.sh
+0 8,10,12,14,16 * * * /home/jc-automation/Downloads/REALTIME/ODC2/run_ODC2.sh
+0 8,10,12,14,16 * * * /home/jc-automation/Downloads/REALTIME/ORC1/run_ORC1.sh
+0 8,10,12,14,16 * * * /home/jc-automation/Downloads/REALTIME/PR1/run_PR1.sh
+
+# Comentários sobre a configuração:
+# - Todos os scripts devem ter permissão de execução (chmod +x)
+# - Os scripts devem estar em /home/jc-automation/Downloads/REALTIME/
+# - Logs são salvos em /home/jc-automation/Downloads/REALTIME/{NOME_AUTOMACAO}/
+# - Emails de erro são enviados para vitor@jcdecor.com.br
+# - Horário de funcionamento: 8h às 17h (horário comercial)
+# - Total de automações: 16 automações reais em produção
